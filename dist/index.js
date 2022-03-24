@@ -5,10 +5,14 @@ const c = true;
 let d = true;
 let e = true;
 let f = false;
-console.log(a);
-console.log(b);
-console.log(c);
-console.log(d);
-console.log(e);
-console.log(f);
+let g;
+let h;
+console.log(a); // ture
+console.log(b); // false
+console.log(c); // true
+console.log(d); // true
+console.log(e); // true
+console.log(f); // error
+console.log(g); // error
+console.log(h); // error
 //# sourceMappingURL=index.js.map

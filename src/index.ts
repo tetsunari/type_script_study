@@ -4,6 +4,8 @@ const c = true;
 let d: boolean = true;
 let e: true = true;
 let f: true = false;
+let g: true;
+let h: false;
 
 console.log(a); // ture
 console.log(b); // false
@@ -11,3 +13,5 @@ console.log(c); // true
 console.log(d); // true
 console.log(e); // true
 console.log(f); // error
+console.log(g); // undefined
+console.log(h); // undefined
