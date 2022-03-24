@@ -1,9 +1,14 @@
 "use strict";
-let user = {
-    firstName: 'andy'
+// let age: Age = 55;
+//
+// let driver: Person = {
+//     name: 'James May',
+//     age: age
+// }
+let age = 55;
+let driver = {
+    name: 'James May',
+    age
 };
-console.log(user);
-console.log(user.firstName);
-let test = user.firstName = 'andy with an a';
-console.log(test);
+console.log(driver);
 //# sourceMappingURL=index.js.map

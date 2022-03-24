@@ -1,11 +1,22 @@
-let user: {
-    readonly firstName: string
-} = {
-    firstName: 'andy'
+type Age = number;
+
+type Person = {
+    name: string,
+    age: Age
 };
-console.log(user);
 
-console.log(user.firstName);
+// let age: Age = 55;
+//
+// let driver: Person = {
+//     name: 'James May',
+//     age: age
+// }
 
-let test = user.firstName = 'andy with an a';
-console.log(test);
+let age = 55;
+
+let driver: Person = {
+    name: 'James May',
+    age
+}
+
+console.log(driver); // { name: 'James May', age: 55 }
