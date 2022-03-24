@@ -1,23 +1,10 @@
 "use strict";
-// Cat
-let a = {
-    name: 'Bonkers',
-    purrs: true
-};
-console.log(a);
-// Dog
-a = {
+// intersection
+let b = {
     name: 'Domino',
     barks: true,
-    wags: true,
-};
-console.log(a);
-// Both
-a = {
-    name: 'Donkers',
-    barks: true,
     purrs: true,
-    wags: true
+    wags: false
 };
-console.log(a);
+console.log(b);
 //# sourceMappingURL=index.js.map
