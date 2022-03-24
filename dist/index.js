@@ -1,11 +1,14 @@
 "use strict";
-let a = 30;
-let b = a === 30;
-let c = a + 20;
-if (typeof a === 'number') {
-    console.log(a + 10);
-}
+let a = true;
+var b = false;
+const c = true;
+let d = true;
+let e = true;
+let f = false;
 console.log(a);
 console.log(b);
 console.log(c);
+console.log(d);
+console.log(e);
+console.log(f);
 //# sourceMappingURL=index.js.map
