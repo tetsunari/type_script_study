@@ -1,39 +1,38 @@
-let a: {b: number};
-a = {};
-a = {
-    b: 1,
-    c: 2,
-};
+let a : {
+    b: number,
+    c?: string,
+    [key: number]: boolean
+}
 
-let i: number;
-let j = i * 2;
+a = {b: 1};
+a = {b: 1, c: undefined};
+a = {b: 1, c: 'c'};
+a = {b: 1, 10: true};
+a = {b: 1, 10: true, 20: false};
+a = {20: true};
+a = {b: 1, 33: 'red'}
 
-let k;
-let l = k * 2;
 
-// error
-// src/index.ts:2:1 - error TS2741: Property 'b' is missing in type '{}' but required in type '{ b: number; }'.
+// error(下二つ)
+// src/index.ts:12:1 - error TS2741: Property 'b' is missing in type '{ 20: true; }' but required in type '{ [key: number]: boolean; b: number; c?: string | undefined; }'.
 //
-// 2 a = {};
+// 12 a = {20: true};
 // ~
 //
-//     src/index.ts:1:9
-// 1 let a: {b: number};
-// ~
-//     'b' is declared here.
+//     src/index.ts:2:5
+// 2     b: number,
+//     ~
+//         'b' is declared here.
 //
-//     src/index.ts:5:5 - error TS2322: Type '{ b: number; c: number; }' is not assignable to type '{ b: number; }'.
-//     Object literal may only specify known properties, and 'c' does not exist in type '{ b: number; }'.
+//     src/index.ts:13:12 - error TS2322: Type 'string' is not assignable to type 'boolean'.
 //
-// 5     c: 2,
-// ~~~~
+// 13 a = {b: 1, 33: 'red'}
+// ~~
 //
-//     src/index.ts:9:9 - error TS2454: Variable 'i' is used before being assigned.
+//     src/index.ts:4:5
+// 4     [key: number]: boolean
+// ~~~~~~~~~~~~~~~~~~~~~~
+//     The expected type comes from this index signature.
 //
-// 9 let j = i * 2;
-// ~
 //
-//     src/index.ts:12:9 - error TS2532: Object is possibly 'undefined'.
-//
-// 12 let l = k * 2;
-// ~
+//     Found 2 errors in the same file, starting at: src/index.ts:12
