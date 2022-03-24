@@ -1,17 +1,16 @@
-let a = true;
-var b = false;
-const c = true;
-let d: boolean = true;
-let e: true = true;
-let f: true = false;
-let g: true;
-let h: false;
+let a = 1234;
+var b = Infinity * 0.10;
+const c = 5678;
+let d = a < b;
+let e: number = 100;
+let f: 26.1 = 26.1;
+let g: 26.1 = 10;
 
-console.log(a); // ture
-console.log(b); // false
-console.log(c); // true
+
+console.log(a); // 1234
+console.log(b); // Infinity
+console.log(c); // 5678
 console.log(d); // true
-console.log(e); // true
-console.log(f); // error
-console.log(g); // undefined
-console.log(h); // undefined
+console.log(e); // 100
+console.log(f); // 26.1
+console.log(g); // error 10
