@@ -1,27 +1,26 @@
-type Color = 'red';
+type Cat = {name: string, purrs: boolean};
+type Dog = {name: string, barks: boolean, wags: boolean};
+type CatOrDogOrBoth = Cat | Dog;
+type CatAndDpg = Cat & Dog;
 
-let x = Math.random();
-
-if (x) {
-    type Color = 'blue';
-    const b: Color = 'blue';
-} else {
-    const c: Color = 'red';
+// Cat
+let a: CatOrDogOrBoth = {
+    name: 'Bonkers',
+    purrs: true
 }
-
-console.log(b);
-console.log(c);
-
-// error
-// src/index.ts:12:13 - error TS2304: Cannot find name 'b'.
-//
-// 12 console.log(b);
-// ~
-//
-//     src/index.ts:13:13 - error TS2304: Cannot find name 'c'.
-//
-// 13 console.log(c);
-// ~
-//
-//
-//     Found 2 errors in the same file, starting at: src/index.ts:12
+console.log(a); // { name: 'Bonkers', purrs: true }
+// Dog
+a = {
+    name: 'Domino',
+    barks: true,
+    wags: true,
+}
+console.log(a); // { name: 'Domino', barks: true, wags: true }
+// Both
+a = {
+    name: 'Donkers',
+    barks: true,
+    purrs: true,
+    wags: true
+}
+console.log(a); // { name: 'Donkers', barks: true, purrs: true, wags: true }

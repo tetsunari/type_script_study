@@ -1,11 +1,23 @@
 "use strict";
-let x = Math.random();
-if (x) {
-    const b = 'blue';
-}
-else {
-    const c = 'red';
-}
-console.log(b);
-console.log(c);
+// Cat
+let a = {
+    name: 'Bonkers',
+    purrs: true
+};
+console.log(a);
+// Dog
+a = {
+    name: 'Domino',
+    barks: true,
+    wags: true,
+};
+console.log(a);
+// Both
+a = {
+    name: 'Donkers',
+    barks: true,
+    purrs: true,
+    wags: true
+};
+console.log(a);
 //# sourceMappingURL=index.js.map
