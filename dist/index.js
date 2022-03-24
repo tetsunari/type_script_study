@@ -1,6 +1,15 @@
 "use strict";
-let a = {
-    b: 'x'
+let c = {
+    firstName: 'John',
+    lastName: 'Smith'
 };
-console.log(a.b);
+console.log(c);
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+c = new Person('matt', 'Bob');
+console.log(c);
 //# sourceMappingURL=index.js.map
