@@ -1,14 +1,11 @@
 "use strict";
-// let age: Age = 55;
-//
-// let driver: Person = {
-//     name: 'James May',
-//     age: age
-// }
-let age = 55;
-let driver = {
-    name: 'James May',
-    age
-};
-console.log(driver);
+let x = Math.random();
+if (x) {
+    const b = 'blue';
+}
+else {
+    const c = 'red';
+}
+console.log(b);
+console.log(c);
 //# sourceMappingURL=index.js.map
