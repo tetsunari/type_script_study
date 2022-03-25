@@ -1,18 +1,11 @@
 enum Language {
-    English,
-    Spanish,
-    Japanese
+    English = 1,
+    Spanish = 2,
+    Japanese = 3
 }
 
-let myFirstLanguage = Language.Japanese;
-let mySecondLanguage = Language.English;
+let good = Language[1];
+let error = Language[4];
 
-console.log(myFirstLanguage); // 2
-console.log(mySecondLanguage); // 0
-
-enum Languages {
-    English = 100,
-    Spanish = 200 + 300,
-    Japanese
-}
-console.log(Languages.Japanese); // 501
+console.log(good); // English
+console.log(error); // undefined
