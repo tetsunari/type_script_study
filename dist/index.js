@@ -4,13 +4,11 @@ var b = ['a', 'b'];
 let c = ['a'];
 let d = [1, 'a'];
 const e = [2, 'b'];
-let f = ['red'];
-f.push('blue');
-f.push(true);
-let g = [];
-g.push(1);
-g.push(true);
-let h = [];
-h.push(1);
-h.push('blue');
+let test = d.map(_ => {
+    if (typeof _ === 'number') {
+        return _ * 3;
+    }
+    return _.toUpperCase();
+});
+console.log(test);
 //# sourceMappingURL=index.js.map
