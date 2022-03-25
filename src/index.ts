@@ -1,23 +1,11 @@
-let a = [1, 2, 3];
-var b = ['a', 'b'];
-let c: string[] = ['a'];
-let d = [1, 'a'];
-const e = [2, 'b'];
+let a: [number] = [1];
 
-function buildArray(): (string|number)[] {
-    // : (string|number)[]は明示的にしなくてもいい
-    let g = []; // any[]
-    g.push(1); // number[]
-    g.push('x'); // (string | number)[]
-    return g;
-}
-
-let myArray = buildArray();
-console.log(typeof myArray); // object
-myArray.push(true);
-
-// error
-// src/index.ts:16:14 - error TS2345: Argument of type 'boolean' is not assignable to parameter of type 'string | number'.
+let b: [string, string, number] = ['apple', 'banana', 1];
+console.log(b); // [ 'apple', 'banana', 1 ]
+b = ['test', 'test2', 2];
+console.log(b); // [ 'test', 'test2', 2 ]
+b = ['queen', 'elizabeth', 'II', 19];
+console.log(b); // error
+// src/index.ts:7:28 - error TS2322: Type 'string' is not assignable to type 'number'.
 //
-// 16 myArray.push(true);
-// ~~~~
+// 7 b = ['queen', 'elizabeth', 'II', 19];
