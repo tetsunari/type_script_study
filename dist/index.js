@@ -1,18 +1,22 @@
 "use strict";
-// 名前付き関数
-function greet(name) {
-    return 'hello' + name;
+function log(message, userId) {
+    const time = new Date().toLocaleTimeString();
+    console.log(time, message, userId || 'Not signed in');
 }
-// 関数式
-function greet2(name) {
-    return 'hello' + name;
+log('Page loaded');
+log('User signed in', 'da763be');
+// オプションパラメータ
+function log_2(message2, userId2 = 'Not singed in') {
+    const time2 = new Date().toISOString();
+    console.log(time2, message2, userId2);
 }
-// アロー関数
-let greet3 = (name) => {
-    return 'hello' + name;
-};
-// アロー関数省略系
-let greet4 = (name) => 'hello' + name;
-greet('World');
-greet4('Tetsu');
+log_2('User clicked on a button', 'da763e');
+log_2('User signed out');
+function log_3(message3, context = {}) {
+    const time3 = new Date().toISOString();
+    console.log(time3, message3, context.userId);
+}
+log_3('test', { appId: 'test' });
+log_3('test', { userId: 'testId' });
+log_3('test');
 //# sourceMappingURL=index.js.map

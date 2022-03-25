@@ -1,20 +1,28 @@
-// 名前付き関数
-function greet(name: string) {
-    return 'hello' + name;
+function log(message: string, userId?: string) {
+    const time = new Date().toLocaleTimeString();
+    console.log(time, message, userId || 'Not signed in');
 }
 
-// 関数式
-function greet2(name: string) {
-    return 'hello' + name;
+log('Page loaded'); // 21:28:50 Page loaded Not signed in
+log('User signed in', 'da763be'); // 21:28:50 User signed in da763be
+// オプションパラメータ
+
+function log_2(message2: string, userId2 = 'Not singed in') {
+    const time2 = new Date().toISOString();
+    console.log(time2, message2, userId2);
 }
+log_2('User clicked on a button', 'da763e'); // 2022-03-25T12:28:50.566Z User clicked on a button da763e
+log_2('User signed out'); // 2022-03-25T12:28:50.567Z User signed out Not singed in
+// デフォルトパラメータ better
 
-// アロー関数
-let greet3 = (name: string) => {
-    return 'hello' + name;
+type Context = {
+    appId?: string,
+    userId?: string
 }
-
-// アロー関数省略系
-let greet4 = (name: string) => 'hello' + name;
-
-greet('World');
-greet4('Tetsu');
+function log_3(message3: string, context: Context = {}) {
+    const time3 = new Date().toISOString();
+    console.log(time3, message3, context.userId);
+}
+log_3('test', {appId: 'test'}); // 2022-03-25T12:28:50.567Z test undefined
+log_3('test', {userId: 'testId'}); // 2022-03-25T12:28:50.567Z test testId
+log_3('test'); // 2022-03-25T12:28:50.567Z test undefined
