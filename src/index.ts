@@ -4,11 +4,20 @@ let c: string[] = ['a'];
 let d = [1, 'a'];
 const e = [2, 'b'];
 
-let test = d.map(_ => {
-    if (typeof _ === 'number') {
-        return _ * 3;
-    }
-    return _.toUpperCase();
-})
+function buildArray(): (string|number)[] {
+    // : (string|number)[]は明示的にしなくてもいい
+    let g = []; // any[]
+    g.push(1); // number[]
+    g.push('x'); // (string | number)[]
+    return g;
+}
 
-console.log(test); // [ 3, 'A' ]
+let myArray = buildArray();
+console.log(typeof myArray); // object
+myArray.push(true);
+
+// error
+// src/index.ts:16:14 - error TS2345: Argument of type 'boolean' is not assignable to parameter of type 'string | number'.
+//
+// 16 myArray.push(true);
+// ~~~~

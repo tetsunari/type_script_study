@@ -4,11 +4,13 @@ var b = ['a', 'b'];
 let c = ['a'];
 let d = [1, 'a'];
 const e = [2, 'b'];
-let test = d.map(_ => {
-    if (typeof _ === 'number') {
-        return _ * 3;
-    }
-    return _.toUpperCase();
-});
-console.log(test);
+function buildArray() {
+    let g = []; // any[]
+    g.push(1); // number[]
+    g.push('x'); // (string | number)[]
+    return g;
+}
+let myArray = buildArray();
+console.log(typeof myArray);
+myArray.push(true);
 //# sourceMappingURL=index.js.map
