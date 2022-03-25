@@ -1,14 +1,18 @@
-type A = readonly string[]; // readonly string[]
-type B = ReadonlyArray<string> // readonly string[]
-type C = Readonly<string> // readonly string[]
+enum Language {
+    English,
+    Spanish,
+    Japanese
+}
 
-type D = readonly [number, string] // readonly [number, string]
-type E = Readonly<[number, string]> // readonly [number, string]
+let myFirstLanguage = Language.Japanese;
+let mySecondLanguage = Language.English;
 
-let a: A = ['test', 'aa'];
-let test = a.concat('aaa');
-console.log(test);
-let b: B = ['test', 'aa'];
-let d: D = [1, 'd'];
+console.log(myFirstLanguage); // 2
+console.log(mySecondLanguage); // 0
 
-// 上記は全て正常動作
+enum Languages {
+    English = 100,
+    Spanish = 200 + 300,
+    Japanese
+}
+console.log(Languages.Japanese); // 501
