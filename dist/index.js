@@ -1,12 +1,28 @@
 "use strict";
-var Language;
-(function (Language) {
-    Language[Language["English"] = 1] = "English";
-    Language[Language["Spanish"] = 2] = "Spanish";
-    Language[Language["Japanese"] = 3] = "Japanese";
-})(Language || (Language = {}));
-let good = Language[1];
-let error = Language[4];
-console.log(good);
-console.log(error);
+let a = 1 /* English */;
+// let b = Language.Tagalog;
+// let c = Language[0];
+// let d = Language[8];
+console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
+// error
+// src/index.ts:8:18 - error TS2339: Property 'Tagalog' does not exist on type 'typeof Language'.
+//
+// 8 let b = Language.Tagalog;
+// ~~~~~~~
+//
+//     src/index.ts:9:18 - error TS2476: A const enum member can only be accessed using a string literal.
+//
+// 9 let c = Language[0];
+// ~
+//
+//     src/index.ts:10:18 - error TS2476: A const enum member can only be accessed using a string literal.
+//
+// 10 let d = Language[8];
+// ~
+//
+//
+//     Found 3 errors in the same file, starting at: src/index.ts:8
 //# sourceMappingURL=index.js.map
