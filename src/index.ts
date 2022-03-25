@@ -1,11 +1,11 @@
-let a: [number] = [1];
+let trainFares: [number, number?][] = [
+    // let trainFares: ([number] | [number, number][])ともかける
+    [2, 3],
+    [1.234],
+]
 
-let b: [string, string, number] = ['apple', 'banana', 1];
-console.log(b); // [ 'apple', 'banana', 1 ]
-b = ['test', 'test2', 2];
-console.log(b); // [ 'test', 'test2', 2 ]
-b = ['queen', 'elizabeth', 'II', 19];
-console.log(b); // error
-// src/index.ts:7:28 - error TS2322: Type 'string' is not assignable to type 'number'.
-//
-// 7 b = ['queen', 'elizabeth', 'II', 19];
+let friends: [string, ...string[]] = ['sara', 'tali', 'chloe', 'claire'];
+// 少なくとも1つの要素
+
+let list: [number, boolean, ...string[]] = [1, false, 'a', 'b', 'c'];
+// 不均一なリスト
