@@ -1,12 +1,20 @@
-function sum(numbers: number[]): number {
-    return numbers.reduce((total, n) => total + n, 0);
+function fancyDate() {
+    return `${this.getMonth() + 1}/${this.getDate()}/${this.getFullYear()}`
 }
 
-const test = sum([1,2,3])
-console.log(test); // 6
+const test = fancyDate.call(new Date());
+console.log(test);
 
-function sumVariadicSafe(...numbers: number[]): number {
-    return numbers.reduce((toral, n) => toral + n, 0);
+// const test2 = fancyDate();
+// console.log(test2);
+
+// 下記のほうが良い
+function fancyDate1(this: Date) {
+    return `${this.getMonth() + 1}/${this.getDate()}/${this.getFullYear()}`
 }
-const betterTest = sumVariadicSafe(1,2,3,4,5);
-console.log(betterTest); // 15
+
+const test3 = fancyDate1.call(new Date());
+console.log(test3);
+
+// const test4 = fancyDate1();
+// console.log(test4); // error
