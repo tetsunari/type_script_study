@@ -1,20 +1,19 @@
-function fancyDate() {
-    return `${this.getMonth() + 1}/${this.getDate()}/${this.getFullYear()}`
+type Log = (message: string, userId?: string) => void;
+
+let log: Log = (
+    message,
+    userId = 'not singed in'
+) => {
+    const time = new Date().toISOString();
+    console.log(time, message, userId);
 }
 
-const test = fancyDate.call(new Date());
-console.log(test);
-
-// const test2 = fancyDate();
-// console.log(test2);
-
-// 下記のほうが良い
-function fancyDate1(this: Date) {
-    return `${this.getMonth() + 1}/${this.getDate()}/${this.getFullYear()}`
+type LogMessage = (message: string) => number
+const logMessage: LogMessage = (message) => {
+    if (message === 'good') {
+        return 1;
+    } else {
+        return 0;
+    }
 }
-
-const test3 = fancyDate1.call(new Date());
-console.log(test3);
-
-// const test4 = fancyDate1();
-// console.log(test4); // error
+console.log(logMessage('good'));

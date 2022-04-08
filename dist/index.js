@@ -1,17 +1,15 @@
 "use strict";
-function fancyDate() {
-    return `${this.getMonth() + 1}/${this.getDate()}/${this.getFullYear()}`;
-}
-const test = fancyDate.call(new Date());
-console.log(test);
-// const test2 = fancyDate();
-// console.log(test2);
-// 下記のほうが良い
-function fancyDate1() {
-    return `${this.getMonth() + 1}/${this.getDate()}/${this.getFullYear()}`;
-}
-const test3 = fancyDate1.call(new Date());
-console.log(test3);
-// const test4 = fancyDate1();
-// console.log(test4); // error
+let log = (message, userId = 'not singed in') => {
+    const time = new Date().toISOString();
+    console.log(time, message, userId);
+};
+const logMessage = (message) => {
+    if (message === 'good') {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+};
+console.log(logMessage('good'));
 //# sourceMappingURL=index.js.map
