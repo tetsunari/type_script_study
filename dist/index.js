@@ -1,15 +1,8 @@
 "use strict";
-let log = (message, userId = 'not singed in') => {
-    const time = new Date().toISOString();
-    console.log(time, message, userId);
-};
-const logMessage = (message) => {
-    if (message === 'good') {
-        return 1;
+function times(f, n) {
+    for (let i = 0; i < n; i++) {
+        f(i);
     }
-    else {
-        return 0;
-    }
-};
-console.log(logMessage('good'));
+}
+times(n => console.log(n), 4);
 //# sourceMappingURL=index.js.map
