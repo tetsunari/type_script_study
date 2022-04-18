@@ -1,4 +1,4 @@
-type Reserve = {
+interface Reserve {
     (from: Date, to: Date, destination: string): string;
     (from: Date, destination: string): string;
 }
