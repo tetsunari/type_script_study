@@ -1,6 +1,6 @@
 let Message: string;
 
-type Cat = {
+interface Cat {
     age: number;
     weight: number;
 }
